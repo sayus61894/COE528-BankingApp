@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="coe528.project.bankingApp.managerPageController">
+   <children>
+      <BorderPane prefHeight="400.0" prefWidth="600.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <bottom>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="The Bank the Programmer Didn't Care About" BorderPane.alignment="CENTER" />
+         </bottom>
+         <top>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Simple Bank" BorderPane.alignment="CENTER">
+               <font>
+                  <Font size="54.0" />
+               </font>
+            </Text>
+         </top>
+         <center>
+            <SplitPane dividerPositions="0.6688963210702341" prefHeight="160.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+              <items>
+                  <BorderPane prefHeight="319.0" prefWidth="35.0">
+                     <center>
+                        <ListView fx:id="currentAccounts" onMouseClicked="#deleteAccount" prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER" />
+                     </center>
+                     <bottom>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Click Accounts to Delete" BorderPane.alignment="CENTER" />
+                     </bottom>
+                     <top>
+                        <Button fx:id="deleteAccountButton" mnemonicParsing="false" onAction="#fillList" text="Fill Current Accounts" BorderPane.alignment="CENTER" />
+                     </top>
+                  </BorderPane>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="319.0" prefWidth="194.0">
+                     <children>
+                        <TextField fx:id="newUserIDField" layoutX="1.0" layoutY="35.0" promptText="New Username/ID" AnchorPane.leftAnchor="10.0" />
+                        <TextField fx:id="newPassField" layoutX="1.0" layoutY="94.0" promptText="Account Password" AnchorPane.leftAnchor="10.0" />
+                        <TextField fx:id="startingBalanceField" layoutX="1.0" layoutY="153.0" promptText="First Deposit" AnchorPane.leftAnchor="10.0" />
+                        <Button fx:id="newCustomerButton" layoutX="36.0" layoutY="194.0" mnemonicParsing="false" onAction="#createCustomer" text="Create Account" />
+                        <Button fx:id="logoutButton" layoutX="65.0" layoutY="279.0" mnemonicParsing="false" onAction="#logout" text="Logout" />
+                     </children>
+                  </AnchorPane>
+              </items>
+            </SplitPane>
+         </center>
+      </BorderPane>
+   </children>
+</AnchorPane>
